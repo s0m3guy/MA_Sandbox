@@ -31,7 +31,10 @@ public class CircleAlt : MonoBehaviour {
 			connectedLine.GetComponent<Line> ().destinObject = this.gameObject;
 		} else if (!Manager.collisionDetected) {
 
-			connectedLine = null;
+			if (connectedLine) {
+				connectedLine.GetComponent<Line> ().destinObject = null;
+			}
+				connectedLine = null;
 		}
 	}
 }

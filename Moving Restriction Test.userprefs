@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MouseFollow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CircleAlt.cs">
     <Files>
-      <File FileName="Assets\CircleAlt.cs" Line="36" Column="3" />
-      <File FileName="Assets\MouseFollow.cs" Line="12" Column="27" />
+      <File FileName="Assets\CircleAlt.cs" Line="15" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
