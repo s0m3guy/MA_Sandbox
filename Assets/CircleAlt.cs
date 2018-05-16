@@ -8,6 +8,8 @@ public class CircleAlt : MonoBehaviour {
 
 	void Update() {
 
+//		Debug.Log (Manager.currentlyDrawnLine);
+
 		if (connectedLine) {
 			GetComponent<SpriteRenderer> ().color = Color.green;
 		} else {
@@ -18,23 +20,28 @@ public class CircleAlt : MonoBehaviour {
 		mousePos.z = 0;
 
 		if (GetComponent<CircleCollider2D> ().bounds.Contains (mousePos)) {
-			Manager.collisionDetected = true;
+			Manager.isMouseInsideCircle = true;
 		} else if (!GetComponent<CircleCollider2D> ().bounds.Contains (mousePos)) {
-			Manager.collisionDetected = false;
+			Manager.isMouseInsideCircle = false;
 		}
 			
-
-		if (Manager.collisionDetected && Manager.currentlyDrawnLine) {
+		// If mouse inside circle and a line being drawn
+		if (Manager.isMouseInsideCircle && Manager.currentlyDrawnLine) {
 			Manager.currentlyDrawnLine.GetComponent<LineRenderer> ().SetPosition (1, this.transform.position);
 
 			connectedLine = Manager.currentlyDrawnLine;
 			connectedLine.GetComponent<Line> ().destinObject = this.gameObject;
-		} else if (!Manager.collisionDetected) {
 
-			if (connectedLine) {
-				connectedLine.GetComponent<Line> ().destinObject = null;
-			}
+			// If mouse not inside circle and a line being drawn
+		} else if (!Manager.isMouseInsideCircle && Manager.currentlyDrawnLine) {
+			Debug.Log ("object: " + this.gameObject.name);
+			if (!connectedLine.GetComponent<Line> ().isSnapped) {
+				if (connectedLine) {
+					connectedLine.GetComponent<Line> ().destinObject = null;
+				}
 				connectedLine = null;
+			}
+
 		}
 	}
 }

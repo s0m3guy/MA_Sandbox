@@ -5,5 +5,7 @@ using UnityEngine;
 public static class Manager {
 
 	public static GameObject currentlyDrawnLine;
-	public static bool collisionDetected = false;
+	public static bool isMouseInsideCircle = false;
+	public static bool isAlreadyConnected = false;
+	public static GameObject alreadyConnectedLine;
 }

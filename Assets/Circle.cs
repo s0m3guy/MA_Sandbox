@@ -16,7 +16,7 @@ public class Circle : MonoBehaviour {
 
 	void OnMouseDrag () {
 
-		if (!Manager.collisionDetected) {
+		if (!Manager.isMouseInsideCircle) {
 			Vector2 screenPos = new Vector2 ();
 			Camera.main.ScreenToWorldPoint (screenPos);
 
@@ -36,5 +36,12 @@ public class Circle : MonoBehaviour {
 
 			line.GetComponent<EdgeCollider2D> ().points = tempEdges;
 		}
+	}
+
+	void OnMouseUp() {
+		if (Manager.isMouseInsideCircle) {
+			Manager.currentlyDrawnLine.GetComponent<Line> ().isSnapped = true;
+		}
+		Manager.currentlyDrawnLine = null;
 	}
 }
