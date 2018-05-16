@@ -34,8 +34,7 @@ public class CircleAlt : MonoBehaviour {
 
 			// If mouse not inside circle and a line being drawn
 		} else if (!Manager.isMouseInsideCircle && Manager.currentlyDrawnLine) {
-			Debug.Log ("object: " + this.gameObject.name);
-			if (!connectedLine.GetComponent<Line> ().isSnapped) {
+			if (connectedLine && !connectedLine.GetComponent<Line> ().isSnapped) {
 				if (connectedLine) {
 					connectedLine.GetComponent<Line> ().destinObject = null;
 				}

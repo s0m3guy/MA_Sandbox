@@ -16,6 +16,8 @@ public class Circle : MonoBehaviour {
 
 	void OnMouseDrag () {
 
+		Debug.Log (Manager.currentlyDrawnLine.GetComponent<Line> ().destinObject);
+
 		if (!Manager.isMouseInsideCircle) {
 			Vector2 screenPos = new Vector2 ();
 			Camera.main.ScreenToWorldPoint (screenPos);
@@ -39,9 +41,14 @@ public class Circle : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
+
 		if (Manager.isMouseInsideCircle) {
 			Manager.currentlyDrawnLine.GetComponent<Line> ().isSnapped = true;
 		}
+		if (!Manager.currentlyDrawnLine.GetComponent<Line>().destinObject) {
+			Destroy (Manager.currentlyDrawnLine);
+		}
+
 		Manager.currentlyDrawnLine = null;
 	}
 }
