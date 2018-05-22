@@ -5,6 +5,18 @@ using UnityEngine;
 public class CircleAlt : MonoBehaviour {
 
 	public GameObject connectedLine;
+	public bool isConnected = false;
+
+	void Start() {
+
+//		Manager.dict.Add (this, false); // Add entry
+//
+//		foreach (KeyValuePair<CircleAlt, bool> pair in Manager.dict)	// Iterate through dictionary
+//		{
+////			Debug.Log(pair.Key + " " + pair.Value);
+//		}
+//
+	}
 
 	void Update() {
 

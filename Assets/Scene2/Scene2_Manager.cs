@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Manager {
+public static class Scene2_Manager {
 
 	public static GameObject currentlyDrawnLine;
 	public static bool isMouseInsideCircle = false;

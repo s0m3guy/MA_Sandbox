@@ -6,6 +6,11 @@ public class Circle : MonoBehaviour {
 
 	GameObject line;
 	Vector2[] tempEdges;
+	Collider2D overlappedCollider;
+
+	void Update() {
+		overlappedCollider = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
+	}
 
 	void OnMouseDown () {
 
@@ -41,6 +46,10 @@ public class Circle : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
+
+		if (overlappedCollider.CompareTag ("input")) {
+			Debug.Log ("Hit input");
+		}
 
 		if (Manager.isMouseInsideCircle) {
 			Manager.currentlyDrawnLine.GetComponent<Line> ().isSnapped = true;

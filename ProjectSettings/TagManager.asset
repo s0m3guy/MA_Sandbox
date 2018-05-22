@@ -11,6 +11,7 @@ TagManager:
   - target2
   - input
   - output
+  - inputPin
   layers:
   - Default
   - TransparentFX
