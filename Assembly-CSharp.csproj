@@ -59,6 +59,7 @@
      <Compile Include="Assets\MouseFollow.cs" />
      <Compile Include="Assets\MovingScript.cs" />
      <Compile Include="Assets\Scene2\Scene2_LeftCircle.cs" />
+     <Compile Include="Assets\Scene2\Scene2_Line.cs" />
      <Compile Include="Assets\Scene2\Scene2_Manager.cs" />
      <Compile Include="Assets\Scene2\Scene2_RightCircle.cs" />
      <Compile Include="Assets\TopScript.cs" />

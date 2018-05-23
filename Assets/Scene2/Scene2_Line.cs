@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Line : MonoBehaviour {
+public class Scene2_Line : MonoBehaviour {
 
 	public GameObject sourceObject, targetObject;
-	public bool isSnapped = false;
-
 
 	void Update() {
-		Debug.Log (targetObject);
+//		Debug.Log (targetObject);
 	}
 }

@@ -20,7 +20,7 @@ public class Scene2_LeftCircle : MonoBehaviour {
 
 	void OnMouseDown() {
 		// instantiate Line after clicking circle
-		line = Instantiate (Resources.Load ("Line")) as GameObject;
+		line = Instantiate (Resources.Load ("Line2")) as GameObject;
 //		Scene2_Manager.currentlyDrawnLine = line.gameObject;
 	}
 
@@ -47,10 +47,8 @@ public class Scene2_LeftCircle : MonoBehaviour {
 
 		overlappedCollider = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
 
-		Debug.Log (overlappedCollider);
-
 		if (overlappedCollider && overlappedCollider.CompareTag ("inputPin")) {
-			Debug.Log ("hit input pin");
+//			Debug.Log ("hit input pin");
 			line.GetComponent<LineRenderer> ().SetPosition (1, overlappedCollider.transform.position);
 		}
 	}
@@ -59,14 +57,20 @@ public class Scene2_LeftCircle : MonoBehaviour {
 
 		if (overlappedCollider && overlappedCollider.CompareTag ("inputPin")) {
 			if (overlappedCollider.GetComponent<Scene2_RightCircle> ().connectedLine) {
-				Debug.Log ("already connected line");
+				// Line is already connected
 				Destroy(overlappedCollider.GetComponent<Scene2_RightCircle>().connectedLine.gameObject);
 				overlappedCollider.GetComponent<Scene2_RightCircle>().connectedLine = line;
+				line.GetComponent<Scene2_Line> ().targetObject = overlappedCollider.gameObject;
+				line.GetComponent<Scene2_Line> ().sourceObject = this.gameObject;
 			} else {
+				// No line connected
 				overlappedCollider.GetComponent<Scene2_RightCircle> ().connectedLine = line;
+				line.GetComponent<Scene2_Line> ().targetObject = overlappedCollider.gameObject;
+				line.GetComponent<Scene2_Line> ().sourceObject = this.gameObject;
 			}
 		} else if (!overlappedCollider) {
 			Destroy (line);
+			Debug.Log ("Destroyed " + line);
 		}
 	}
 }
