@@ -181,11 +181,17 @@
 -define:UNITY_TEAM_LICENSE
 Assets/Circle.cs
 Assets/CircleAlt.cs
+Assets/ColliderClickTest.cs
 Assets/Line.cs
 Assets/Manager.cs
 Assets/MouseFollow.cs
 Assets/MovingScript.cs
+Assets/Scene2/Scene2_LeftCircle.cs
+Assets/Scene2/Scene2_Line.cs
+Assets/Scene2/Scene2_Manager.cs
+Assets/Scene2/Scene2_RightCircle.cs
 Assets/TopScript.cs
+Assets/Trigger.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"

@@ -67,6 +67,7 @@ public class Scene2_RightCircle : MonoBehaviour {
 			}
 		} else if (!collisionObject) {
 			Destroy (connectedLine);
+			connectedLine = null;
 			Debug.Log ("Destroyed " + connectedLine);
 		}
 	}
