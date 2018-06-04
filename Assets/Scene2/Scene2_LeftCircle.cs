@@ -53,10 +53,17 @@ public class Scene2_LeftCircle : MonoBehaviour {
 		line.GetComponent<LineRenderer>().SetPosition(1, unclampedVector);
 
 		overlappedCollider = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
+		Debug.Log (overlappedCollider);
 
 		if (overlappedCollider && overlappedCollider.CompareTag ("inputPin")) {
 //			Debug.Log ("hit input pin");
-			line.GetComponent<LineRenderer> ().SetPosition (1, overlappedCollider.transform.position);
+//			line.GetComponent<LineRenderer> ().SetPosition (1, overlappedCollider.transform.position);
+//			Debug.Log(line.GetComponent<Scene2_Line_Bezier>().controlPoints[2]);
+			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [4] = overlappedCollider.gameObject;
+			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [5] = overlappedCollider.gameObject;
+		} else if (!overlappedCollider) {
+			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [4] = line.GetComponent<Scene2_Line_Bezier> ().mouseFollower;
+			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [5] = line.GetComponent<Scene2_Line_Bezier> ().mouseFollower;
 		}
 	}
 

@@ -7,12 +7,12 @@ public class Scene2_Line_Bezier : MonoBehaviour {
 	public GameObject sourceObject, targetObject;
 
 	public List<GameObject> controlPoints = new List<GameObject>();
-	public Color color = Color.white;
+	public Color color = Color.red;
 	public float width = 0.2f;
 	public int numberOfPoints = 20;
 	LineRenderer lineRenderer;
 
-	GameObject tangent1, tangent2, mouseFollower;
+	public GameObject tangent1, tangent2, mouseFollower;
 
 	void Start() {
 		
