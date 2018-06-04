@@ -55,10 +55,14 @@ public class Scene2_LeftCircle : MonoBehaviour {
 		overlappedCollider = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
 		Debug.Log (overlappedCollider);
 
+		line.GetComponent<Scene2_Line_Bezier>().tangent2.transform.position = new Vector3 (
+//			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).x - 2,
+			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).x - GetComponent<CircleCollider2D>().bounds.size.x/2,
+			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).y,
+			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).z);
+
 		if (overlappedCollider && overlappedCollider.CompareTag ("inputPin")) {
-//			Debug.Log ("hit input pin");
 //			line.GetComponent<LineRenderer> ().SetPosition (1, overlappedCollider.transform.position);
-//			Debug.Log(line.GetComponent<Scene2_Line_Bezier>().controlPoints[2]);
 			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [4] = overlappedCollider.gameObject;
 			line.GetComponent<Scene2_Line_Bezier> ().controlPoints [5] = overlappedCollider.gameObject;
 		} else if (!overlappedCollider) {

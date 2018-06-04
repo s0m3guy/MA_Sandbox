@@ -49,11 +49,6 @@ public class Scene2_Line_Bezier : MonoBehaviour {
 			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).y,
 			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).z);
 
-		tangent2.transform.position = new Vector3 (
-			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).x - 2,
-			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).y,
-			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).z);
-
 		if (null == lineRenderer || controlPoints == null || controlPoints.Count < 3)
 		{
 			return; // not enough points specified

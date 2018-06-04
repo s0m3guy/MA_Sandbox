@@ -94,9 +94,12 @@ MonoBehaviour:
   sourceObject: {fileID: 0}
   targetObject: {fileID: 0}
   controlPoints: []
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 1, g: 0, b: 0, a: 1}
   width: 0.2
   numberOfPoints: 20
+  tangent1: {fileID: 0}
+  tangent2: {fileID: 0}
+  mouseFollower: {fileID: 0}
 --- !u!120 &120696743775947344
 LineRenderer:
   m_ObjectHideFlags: 1
