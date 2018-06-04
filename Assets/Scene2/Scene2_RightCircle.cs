@@ -19,13 +19,6 @@ public class Scene2_RightCircle : MonoBehaviour {
 		}
 	}
 
-	private void switchCircle(Scene2_RightCircle newCircle) {
-
-//		connectedLine.GetComponent<Scene2_Line> ().targetObject = newCircle;
-//		this.connectedLine = null;
-
-	}
-
 	void OnMouseDrag() {
 
 		if (connectedLine) {

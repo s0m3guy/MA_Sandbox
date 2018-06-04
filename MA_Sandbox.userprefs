@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scene2\Scene2_RightCircle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scene2\Scene2_LeftCircle.cs">
     <Files>
-      <File FileName="Assets\Scene2\Scene2_RightCircle.cs" Line="25" Column="31" />
-      <File FileName="Assets\Scene2\Scene2_Line.cs" Line="10" Column="17" />
+      <File FileName="Assets\Scene2\Scene2_Line_Bezier.cs" Line="107" Column="2" />
+      <File FileName="Assets\Scene2\Scene2_LeftCircle.cs" Line="80" Column="1" />
+      <File FileName="Assets\scene3_bezier\Bezier_Spline.cs" Line="14" Column="3" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

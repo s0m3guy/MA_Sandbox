@@ -88,11 +88,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580220106281242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f56122d77307f74fb5cc77b3fcb4579, type: 3}
+  m_Script: {fileID: 11500000, guid: d6003add3f4059d4cbbd76ecfbfe6695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 0}
   targetObject: {fileID: 0}
+  controlPoints: []
+  color: {r: 1, g: 1, b: 1, a: 1}
+  width: 0.2
+  numberOfPoints: 20
 --- !u!120 &120696743775947344
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -179,6 +179,7 @@
 -define:UNITY_EDITOR_WIN
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+Assets/BezierCurve.cs
 Assets/Circle.cs
 Assets/CircleAlt.cs
 Assets/ColliderClickTest.cs
@@ -188,8 +189,12 @@ Assets/MouseFollow.cs
 Assets/MovingScript.cs
 Assets/Scene2/Scene2_LeftCircle.cs
 Assets/Scene2/Scene2_Line.cs
+Assets/Scene2/Scene2_Line_Bezier.cs
 Assets/Scene2/Scene2_Manager.cs
 Assets/Scene2/Scene2_RightCircle.cs
+Assets/scene3_bezier/Bezier_Curve.cs
+Assets/scene3_bezier/Bezier_Spline.cs
+Assets/scene3_bezier/Bezier_Spline_Custom.cs
 Assets/TopScript.cs
 Assets/Trigger.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"

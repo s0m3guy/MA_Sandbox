@@ -5,12 +5,18 @@ using UnityEngine;
 public class Scene2_LeftCircle : MonoBehaviour {
 
 	GameObject line;
-	Vector2[] tempEdges;
 	Collider2D overlappedCollider;
+
+	Vector3 clampVector, unclampedVector;
+
+	BoxCollider2D upperBound, lowerBound;
+
+	GameObject tangent1, tangent2;
 
 	// Use this for initialization
 	void Start () {
-		
+		upperBound = GameObject.Find ("Upperbound").GetComponent<BoxCollider2D>();
+		lowerBound = GameObject.Find ("Lowerbound").GetComponent<BoxCollider2D>();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +27,7 @@ public class Scene2_LeftCircle : MonoBehaviour {
 	void OnMouseDown() {
 		// instantiate Line after clicking circle
 		line = Instantiate (Resources.Load ("Line2")) as GameObject;
-//		Scene2_Manager.currentlyDrawnLine = line.gameObject;
+		line.GetComponent<Scene2_Line_Bezier> ().sourceObject = this.gameObject;
 	}
 
 	void OnMouseDrag() {
@@ -29,21 +35,22 @@ public class Scene2_LeftCircle : MonoBehaviour {
 		Vector2 screenPos = new Vector2 ();
 		Camera.main.ScreenToWorldPoint (screenPos);
 
+		unclampedVector = Camera.main.ScreenToWorldPoint (Input.mousePosition)
+			+ Vector3.forward * 10
+			;
+
+		clampVector = new Vector3 ((Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).x,
+			Mathf.Clamp ((Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).y,
+				lowerBound.bounds.max.y,
+				upperBound.bounds.min.y),
+			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).z);
+
+
 		line.GetComponent<LineRenderer> ().SetPosition (0,
 			new Vector3 (transform.position.x + (GetComponent<SpriteRenderer> ().bounds.size.x) / 2,
 				transform.position.y,
 				transform.position.z));
-		line.GetComponent<LineRenderer> ().SetPosition (1, Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10);
-
-		tempEdges = line.GetComponent<EdgeCollider2D> ().points;
-		tempEdges [0] = new Vector2 (
-			transform.position.x + (GetComponent<SpriteRenderer> ().bounds.size.x) / 2 - 0.7f,
-			transform.position.y - 0.217f);
-		tempEdges [1] = new Vector2 (
-			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).x - 0.7f,
-			(Camera.main.ScreenToWorldPoint (Input.mousePosition) + Vector3.forward * 10).y - 0.217f);
-
-		line.GetComponent<EdgeCollider2D> ().points = tempEdges;
+		line.GetComponent<LineRenderer>().SetPosition(1, unclampedVector);
 
 		overlappedCollider = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
 

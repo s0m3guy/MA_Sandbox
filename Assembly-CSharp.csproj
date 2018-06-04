@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BezierCurve.cs" />
      <Compile Include="Assets\Circle.cs" />
      <Compile Include="Assets\CircleAlt.cs" />
      <Compile Include="Assets\ColliderClickTest.cs" />
@@ -60,8 +61,12 @@
      <Compile Include="Assets\MovingScript.cs" />
      <Compile Include="Assets\Scene2\Scene2_LeftCircle.cs" />
      <Compile Include="Assets\Scene2\Scene2_Line.cs" />
+     <Compile Include="Assets\Scene2\Scene2_Line_Bezier.cs" />
      <Compile Include="Assets\Scene2\Scene2_Manager.cs" />
      <Compile Include="Assets\Scene2\Scene2_RightCircle.cs" />
+     <Compile Include="Assets\scene3_bezier\Bezier_Curve.cs" />
+     <Compile Include="Assets\scene3_bezier\Bezier_Spline.cs" />
+     <Compile Include="Assets\scene3_bezier\Bezier_Spline_Custom.cs" />
      <Compile Include="Assets\TopScript.cs" />
      <Compile Include="Assets\Trigger.cs" />
  <Reference Include="UnityEngine.UI">
